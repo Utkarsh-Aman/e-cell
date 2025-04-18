@@ -1,25 +1,26 @@
-/* styles.css - E-Cell IITK E-Summit Theme */
+/* styles.css - E-Cell IITK Purple Theme */
 :root {
-  --primary-dark: #0a1a3a;
-  --primary-medium: #1a2e5a;
-  --primary-light: #2c3e6e;
-  --accent-blue: #00a8e8;
-  --accent-purple: #8a2be2;
+  --primary-dark: #1a0a3a;
+  --primary-medium: #2e1a5a;
+  --primary-light: #3e2c6e;
+  --accent-blue: #8a2be2;
+  --accent-purple: #9370db;
   --text-light: #ffffff;
   --text-gray: #e0e0e0;
 }
 
-/* General Styles */
+/* Base Styles */
 body {
-  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f8f9fa;
   color: #333;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Header Styles */
+/* Header */
 header {
   background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
   color: var(--text-light);
@@ -27,13 +28,13 @@ header {
   padding: 3rem 1rem;
   margin-bottom: 2rem;
   position: relative;
-  overflow: hidden;
+  border-bottom: 4px solid var(--accent-blue);
 }
 
 header::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -4px;
   left: 0;
   right: 0;
   height: 4px;
@@ -44,24 +45,21 @@ h1 {
   margin: 0;
   font-size: 2.8rem;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 1px;
   background: linear-gradient(90deg, var(--text-light), var(--text-gray));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .subtitle {
   font-size: 1.3rem;
   margin-top: 1rem;
-  opacity: 0.9;
   font-weight: 300;
   color: var(--text-gray);
 }
 
-/* Startup Container */
+/* Startup Grid */
 .startup-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -71,11 +69,10 @@ h1 {
   margin: 0 auto 3rem;
 }
 
-/* Startup Cards */
+/* Cards */
 .startup-card {
   background: white;
   border-radius: 8px;
-  overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   padding: 1.8rem;
@@ -84,7 +81,7 @@ h1 {
   align-items: center;
   text-align: center;
   border-top: 4px solid var(--accent-blue);
-  position: relative;
+  will-change: transform, box-shadow;
 }
 
 .startup-card:hover {
@@ -102,7 +99,6 @@ h1 {
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
-  overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   border: 2px solid var(--primary-light);
 }
@@ -126,6 +122,7 @@ h2 {
   margin: 0.8rem 0;
   font-size: 1rem;
   line-height: 1.5;
+  min-height: 40px;
 }
 
 .founder {
@@ -139,20 +136,18 @@ h2 {
   display: inline-block;
   background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
   color: white;
-  padding: 0.7rem 1.5rem;
+  padding: 0.8rem 2rem;
   border-radius: 30px;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
   margin-top: auto;
-  box-shadow: 0 4px 10px rgba(0, 168, 232, 0.3);
+  box-shadow: 0 4px 10px rgba(138, 43, 226, 0.3);
 }
 
 .learn-more:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 168, 232, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(147, 112, 219, 0.4);
 }
 
 .learn-more i {
@@ -173,7 +168,7 @@ footer p {
   margin: 0;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
   .startup-container {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -189,7 +184,7 @@ footer p {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .startup-container {
     grid-template-columns: 1fr;
   }
@@ -202,14 +197,11 @@ footer p {
     font-size: 1.8rem;
   }
   
-  .subtitle {
-    font-size: 1rem;
-  }
-  
   .startup-card {
-    padding: 1.5rem;
+    min-width: 90vw;
+    margin: 0 auto;
   }
 }
 
-/* Add Poppins font */
+/* Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
