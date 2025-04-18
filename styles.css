@@ -42,12 +42,18 @@ header {
   flex-wrap: wrap;
 }
 
+/* Add this to your existing CSS */
 .header-logo {
-  height: 70px;
+  height: 65px; /* Adjusted for official logo proportions */
   width: auto;
-  max-width: 200px;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  max-width: 180px; /* Constrain width */
+  top: 1.2rem;
+  filter: 
+    drop-shadow(0 2px 4px rgba(0,0,0,0.3))
+    brightness(1.1); /* Slight brightness boost */
 }
+
+
 
 .header-text {
   text-align: center;
@@ -262,9 +268,10 @@ footer p {
     padding: 5rem 1rem 2rem;
   }
   
-  .header-logo {
-    height: 60px;
-    top: 1.2rem;
+   .header-logo {
+    height: 55px;
+    max-width: 150px;
+    top: 1rem;
   }
   
   h1 {
@@ -286,8 +293,8 @@ footer p {
   }
   
   .header-logo {
-    height: 50px;
-    top: 1rem;
+    height: 45px;
+    max-width: 130px;
   }
   
   h1 {
@@ -308,6 +315,8 @@ footer p {
     margin: 0 auto;
   }
 }
+/* Mobile adjustments */
+
 
 /* Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
