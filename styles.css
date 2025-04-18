@@ -34,20 +34,26 @@ header {
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 1rem;
+  flex-wrap: wrap;
 }
 
 .header-logo {
-  position: absolute;
-  top: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
   height: 70px;
   width: auto;
   max-width: 200px;
-  z-index: 10;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
 }
+
+.header-text {
+  text-align: center;
+  flex: 1;
+}
+
 
 .header-decoration {
   position: absolute;
