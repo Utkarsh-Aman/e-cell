@@ -21,14 +21,39 @@ body {
 }
 
 /* Header */
+/* Add to your header styles */
 header {
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
-  color: var(--text-light);
-  text-align: center;
-  padding: 3rem 1rem;
-  margin-bottom: 2rem;
   position: relative;
-  border-bottom: 4px solid var(--accent-blue);
+  padding-top: 5rem; /* More space for logo */
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Logo styles */
+.header-logo {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 60px;
+  width: auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+/* Decorative elements (optional) */
+.header-decoration {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.1;
+  background-image: 
+    radial-gradient(circle at 20% 30%, var(--accent-purple) 0%, transparent 20%),
+    radial-gradient(circle at 80% 70%, var(--accent-blue) 0%, transparent 20%);
 }
 
 header::after {
@@ -200,6 +225,15 @@ footer p {
   .startup-card {
     min-width: 90vw;
     margin: 0 auto;
+  }
+}
+@media (max-width: 768px) {
+  .header-logo {
+    height: 50px;
+    top: 1rem;
+  }
+  header {
+    padding-top: 4rem;
   }
 }
 
